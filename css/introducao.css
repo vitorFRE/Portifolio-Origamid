@@ -1,0 +1,63 @@
+.introducao {
+  max-width: 1200px; /* tamanho maximo da introduçãoo */
+  padding: 40px 20px; /* 40px para cima e baixo 20px para os dois lados */
+  margin: 0 auto; /* alinhando ao centro */
+  display: grid; /* tornando grid */
+  grid-template-columns: 1fr 2fr; /* 2 lados, onde o 2 vai ser duas vezes maior que o primeiro */
+  gap: 100px; /* espaçamento entre os itens */
+  align-items: center;
+}
+
+.introducao h1 {
+  font-size: 4.5rem; /* tamanho da font d h1 da introdução */
+  line-height: 1.125; /* espaçamento */
+  margin-bottom: 30px; /* criando uma margin na parte de baixo do h1 */
+  position: relative; /* elemento pai do before abaixo */
+}
+
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url(../img/detalhe.svg) no-repeat center;
+  position: absolute; /* em relaçao com o elemento pai no h1 */
+  top: -15px; /* colocando o detalhe para cima */
+  left: -40px; /* colocando o detalhe para esquerda */
+  z-index: -1; /* colocando o detalhe atras do texto */
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem; /* diminuindo a fonte em 1000px */
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* espaço entre as coluna */
+  }
+  .introducao h1 {
+    font-size: 2rem; /* diminuindo a fonte em 800px */
+  }
+  .introducao h1::before {
+    width: 30px; /* tamanho do detalhe */
+    height: 10px; /* altura do detalhe */
+    left: 0px; /* removendo o detalhe da direita */
+  }
+}
+
+@media (max-width: 400px) {
+  .introducao img {
+    display: none; /* tirando a imagem em 400px */
+  }
+  .introducao {
+    grid-template-columns: 1fr; /* deixand somente em 1 coluna */
+  }
+}

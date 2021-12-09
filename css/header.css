@@ -1,0 +1,37 @@
+.header {
+  max-width: 1200px; /* definindo o tamanho maximo da pagina */
+  display: flex; /* tornando o header flex */
+  justify-content: space-between; /* criando o espaço entra a logo e a lista */
+  align-items: center; /* alinhando ao centro da logo as listas */
+  padding: 40px 20px; /* espaçamento */
+  margin: 0 auto; /* alinhando ao centro */
+}
+
+.header-menu {
+  display: flex; /* tornando as listar flex */
+  gap: 10px; /* espaçamento entre cada item da lista */
+  flex-wrap: wrap; /* para os itens da lista quebrar */
+  justify-content: center; /* definindo os itens da listas ao centro quando quebrar */
+}
+
+.header-menu a {
+  font-size: 1.125rem; /* tamanho da fonte dos 'a' do header */
+  line-height: 1.3; /* espaçamento entre as linhas */
+  padding: 10px 20px; /* espaçamento */
+  text-decoration: none; /* tirando decoração azul dos texto */
+  color: #141414; /* definindo a cor do a */
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column; /* mudando a direção do header para coluna */
+    gap: 40px; /* criando um espaçamento entre a logo e a lista */
+    padding: 20px;
+  }
+
+  .header a {
+    background: #f5f5f5;
+    border-radius: 5px;
+  }
+}
